@@ -1,15 +1,12 @@
 /**
- * Animated_Bubbles.java
+ * Building.java
  * @author Garrett J. Beasley
- * 10/06/2014
- * Draws a Bubbles that grow and move to the top of the screen
+ * 11/01/2014
+ * Building class for making building GCompound
  */
 
 /** Imports for the project */
-
-
 import java.awt.Color;
-
 import acm.graphics.GCompound;
 import acm.graphics.*;
 
