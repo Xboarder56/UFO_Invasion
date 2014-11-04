@@ -16,29 +16,31 @@ public class Building extends GCompound
 	private Color mColor;
 	private double width;
 	private double height;
+	private double startX;
+	private double startY;
 	
-	public Building(Color color, double x,double y)
+	public Building(Color color, double x,double y,double locationX,double locationY)
 	{
 		mColor = color;
 		width = x;
 		height = y;
+		startX = locationX;
+		startY = locationY;
 		createBuilding();
-		createGround();
 	}
 
 	
 	private void createBuilding()
 	{
-		int startX = 50; int StartY=500;
 		GRect building = new GRect(width,height);
-		building.setLocation(startX,StartY);
+		building.setLocation(startX,startY);
 		building.setFillColor(mColor);
 		building.setFilled(true);
 		add(building);
 		
 		int doorX = 15; int doorY = 20;
 		GRect door = new GRect(doorX,doorY);
-		door.setLocation(startX+((width-doorX)/2),StartY+height-(doorY));
+		door.setLocation(startX+((width-doorX)/2),startY+height-(doorY));
 		door.setFillColor(Color.BLACK);
 		door.setFilled(true);
 		add(door);
@@ -47,7 +49,7 @@ public class Building extends GCompound
 		for(int i=1; i<8; i++)
 		{
 			GRect window = new GRect(10,10);
-			window.setLocation(startX+windowSep,StartY+5);
+			window.setLocation(startX+windowSep,startY+5);
 			window.setFillColor(Color.RED);
 			window.setFilled(true);
 			add(window);
@@ -55,23 +57,5 @@ public class Building extends GCompound
 			windowSep+=15;
 		}
 		
-	}
-	
-	
-	private void createGround()
-	{
-		int windowX=800; int windowY=800;  int streetX=800; int streetY=100;
-		GRect mainStreet = new GRect(streetX,streetY);
-		mainStreet.setLocation(windowX-streetX,windowY-streetY);
-		mainStreet.setFillColor(Color.gray);
-		mainStreet.setFilled(true);
-		add(mainStreet);
-		
-		int sideWalkX = 800; int sideWalkY = 20;
-		GRect sideWalk = new GRect(sideWalkX,sideWalkY);
-		sideWalk.setLocation(windowX-sideWalkX,(windowY-streetY)-sideWalkY);
-		sideWalk.setFillColor(Color.BLACK);
-		sideWalk.setFilled(true);
-		add(sideWalk);
 	}
 }
