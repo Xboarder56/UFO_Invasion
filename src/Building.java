@@ -14,10 +14,9 @@ import acm.graphics.*;
 public class Building extends GCompound
 {
 	private Color mColor;
-	private double width;
-	private double height;
-	private double startX;
-	private double startY;
+	private double width; private double height;
+	private double startX; private double startY;
+	public static final int doorX = 15; public static final int doorY = 20; public static final int windowSize = 10;
 	
 	public Building(Color color, double x,double y,double locationX,double locationY)
 	{
@@ -38,23 +37,22 @@ public class Building extends GCompound
 		building.setFilled(true);
 		add(building);
 		
-		int doorX = 15; int doorY = 20;
 		GRect door = new GRect(doorX,doorY);
 		door.setLocation(startX+((width-doorX)/2),startY+height-(doorY));
 		door.setFillColor(Color.BLACK);
 		door.setFilled(true);
 		add(door);
+
 		
 		int windowSep =0;
-		for(int i=1; i<8; i++)
+		for(int i=1; i<=8; i++)
 		{
 			GRect window = new GRect(10,10);
-			window.setLocation(startX+windowSep,startY+5);
-			window.setFillColor(Color.RED);
-			window.setFilled(true);
-			add(window);
-			
-			windowSep+=15;
+			window.setLocation(startX+windowSep,startY);
+ 			window.setFillColor(Color.RED);
+ 			window.setFilled(true);
+ 			add(window);
+ 			windowSep+=15;
 		}
 		
 	}
