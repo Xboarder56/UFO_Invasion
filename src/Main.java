@@ -26,8 +26,9 @@ public class Main extends GraphicsProgram
 	GRect sideWalk = new GRect(SIDEWALK_X,SIDEWALK_Y);
 	Building building1 = new Building(Color.gray, 100,150,50,530);
 	Building building2 = new Building(Color.ORANGE, 100,150,480,530);
-	Building building3 = new Building(Color.BLUE, 100,150,300,530);
-	Building building4 = new Building(Color.CYAN, 100,150,650,530);
+	Building building3 = new Building(Color.BLUE, 100,310,300,370);
+	Building building4 = new Building(Color.CYAN, 100,250,650,430);	
+	Building building5 = new Building(Color.GREEN, 100,210,180,470);
 	
 	public void init()
 	{
@@ -69,7 +70,7 @@ public class Main extends GraphicsProgram
 	    beam.setFilled(true);
 	    
 	    /**Adds the created objects to the project*/
-	    add(beam); add(UFO); add(building1); add(building2); add(building3); add(building4);
+	    add(beam); add(UFO); add(building1); add(building2); add(building3); add(building4);  add(building5);
 	    
     }
     

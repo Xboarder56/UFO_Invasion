@@ -54,7 +54,7 @@ public class Building extends GCompound
  
  		/**Takes the height of the building and the size of the windows and then counts by +2 to 
  		 * leave a space between each of the windows for the building.*/
- 		for (int i = 1; i < (height/WINDOW_SIZE)-2; i+=2) 
+ 		for (int i = 1; i < (height/WINDOW_SIZE)-3; i+=2) 
  		{
  			
  			/**Takes the times that it goes over by i in the horizontal section
